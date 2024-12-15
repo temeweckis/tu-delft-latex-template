@@ -1,0 +1,58 @@
+#### Relevant excerpts TeX.gitignore: https://github.com/github/gitignore/blob/main/TeX.gitignore
+
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+## Intermediate documents:
+*.dvi
+*.xdv
+*-converted-to.*
+
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex*
+*.synctex.gz*
+*.pdfsync
+*.rubbercache
+rubber.cache
+
+## Build tool directories for auxiliary files
+latex.out/
+
+## Auxiliary and intermediate files from other packages:
+# amsthm
+*.thm
+
+# hyperref
+*.brf
+
+# listings
+*.lol
+
+# tcolorbox
+*.listing
+
+# xcolor
+*.xcp
+
+## Default output file:
+document.pdf
