@@ -1,0 +1,38 @@
+%% Document settings (Template by Teemu Weckroth).
+\documentclass[a4paper]{article}
+%
+% Preamble.
+\input{tex/preamble.tex}
+%
+% Title settings.
+\newcommand{\mycoursecode}{Course code}
+\newcommand{\mycoursetitle}{Course title}
+\newcommand{\mytitle}{Title}
+\newcommand{\myauthor}{Author Name ($\cdots$)}
+\newcommand{\mygroup}{}
+\newcommand{\mydate}{\today}
+%
+% Begin document.
+\begin{document}
+
+%% Titlepage.
+\input{tex/titlepage.tex}
+
+%% Table of contents.
+\vspace*{1cm}
+{\setlength{\baselineskip}{0.6cm}\tableofcontents}
+\newpage
+
+%% Main body.
+\input{tex/body.tex}
+\newpage
+
+%% Bibliography.
+{\renewcommand{\UrlFont}{\small\ttfamily}\printbibliography}
+\newpage
+
+%% Appendix.
+\input{tex/appendix.tex}
+
+\newpage
+\end{document}

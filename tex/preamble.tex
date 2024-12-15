@@ -1,0 +1,210 @@
+% Include packages.
+\usepackage[tmargin=2cm,rmargin=1in,lmargin=1in,margin=0.85in,bmargin=2cm,footskip=.2in]{geometry}
+\usepackage{isomath}                                % ISO 80000-2 standardized math notation
+\usepackage{mathtools}                              % Math tools (amsmath extension)
+\usepackage{amsthm}                                 % Theorem and proof environments
+\usepackage{sourcesanspro,sourcecodepro,XCharter}   % Body font settings (sourcesanspro for sf, sourcecodepro for tt, XCharter for rm)
+\usepackage[xcharter,vvarbb]{newtxmath}             % Math font settings (XCharter)
+\usepackage{graphicx}                               % Displaying images and figures
+\usepackage[font=sf]{caption}                       % Caption typesetting (sans fonts)
+\usepackage[font=sf]{floatrow}                      % Floating object environments (sans fonts)
+\usepackage{subcaption}                             % Subcaption typesetting
+\usepackage{parskip}                                % Paragraph indentation settings
+\usepackage[exponent-product=\cdot]{siunitx}        % SI units (cdot instead of cross for exponent product)
+\usepackage{enumitem}                               % Control over enumerate, itemize, and description environments
+\usepackage{listings}                               % `lstlisting` environment for code
+\usepackage{lstautogobble}                          % Autogobble for `listings` package
+\usepackage[titletoc]{appendix}                     % Appendices
+\usepackage{xcolor}                                 % Various colour settings
+\usepackage{anyfontsize}                            % Font size settings (font size substitutions)
+\usepackage[most]{tcolorbox}                        % Coloured and framed box environments
+%
+% Use the `fontenc` package if not using the lualatex compiler.
+\ifdefined\directlua\else
+  \usepackage[T1]{fontenc}                          % Font encoding
+\fi
+%
+% Bibliography settings (build with lualatex -> biber -> lualatex x 2).
+\usepackage[style=authoryear,
+    maxbibnames=5,
+    maxcitenames=2,
+    giveninits=true,
+    uniquelist=false,
+    uniquename=init,
+    seconds=true,
+    urldate=iso,
+    ]{biblatex}
+\addbibresource{references.bib}
+\newcommand\citep{\parencite}
+%
+% Hyperref setup.
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdfauthor={Author Name},pdftitle={Title}}
+%
+% Path to graphics folder.
+\graphicspath{{./figures/}}
+%
+% Commands for differentials. Redefines the underdot command!
+\renewcommand\d{\mathop{}\!\mathrm{d}}
+\newcommand\p{\mathop{}\!\mathrm{\partial}}
+%
+% Fix strange math encoding (lualatex).
+\DeclareSIPrefix\micro{\text{\textmu}}{-3}          % Otherwise displays μ as ţ
+%
+% Commands for Big-Oh notation.
+\newcommand{\oh}{\mathcal{O}}
+%
+% Commands for the set of real numbers and Lagrangian/Laplace.
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\La}{\mathscr{L}}
+%
+% Shrink bullet points.
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+%
+% Define TU Delft colors.
+\definecolor{tudelft-cyaan}{RGB}{0,166,214}
+\definecolor{tudelft-wit}{RGB}{255,255,255}
+\definecolor{tudelft-zwart}{RGB}{0,0,0}
+\definecolor{tudelft-donkerblauw}{RGB}{12,35,64}
+\definecolor{tudelft-turkoois}{RGB}{0,184,200}
+\definecolor{tudelft-koningsblauw}{RGB}{0,118,194}
+\definecolor{tudelft-paars}{RGB}{111,29,119}
+\definecolor{tudelft-roze}{RGB}{239,96,163}
+\definecolor{tudelft-bordeaux}{RGB}{165,0,52}
+\definecolor{tudelft-rood}{RGB}{224,60,49}
+\definecolor{tudelft-oranje}{RGB}{237,104,66}
+\definecolor{tudelft-geel}{RGB}{255,184,28}
+\definecolor{tudelft-groen}{RGB}{108,194,74}
+\definecolor{tudelft-bosgroen}{RGB}{0,155,119}
+\definecolor{tudelft-donkergrijs}{RGB}{92,92,92}
+%
+% Define default code environment.
+\lstdefinestyle{code}{
+    backgroundcolor=\color{white},
+    basicstyle=\small\ttfamily,
+    breaklines=true,
+    captionpos=b,
+    commentstyle=\itshape\color{tudelft-donkergrijs},
+    escapeinside={\%*}{*)},
+    frame=lines,
+    keepspaces=true,
+    keywordstyle=\color{tudelft-koningsblauw},
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\small\ttfamily\color{tudelft-donkergrijs},
+    rulecolor=\color{black},
+    showspaces=false,
+    showstringspaces=false,
+    stringstyle=\color{tudelft-groen},
+    autogobble=true,
+    tabsize=2
+}
+\lstset{style=code}
+%
+% Define Question environment. Inspired by `SeniorMars`.
+\makeatletter
+\newtcbtheorem[number within=section]{Question}{Question}{enhanced,
+    label=qs:\thesection.\arabic{\tcbcounter},
+    breakable,
+    colback=white,
+    colframe=tudelft-koningsblauw,
+    attach boxed title to top left={yshift*=-\tcboxedtitleheight},
+    fonttitle=\bfseries,
+    boxed title size=title,
+    boxed title style={%
+            sharp corners,
+            rounded corners=northwest,
+            colback=tcbcolframe,
+            boxrule=0pt,
+        },
+    underlay boxed title={%
+            \path[fill=tcbcolframe] (title.south west)--(title.south east)
+            to[out=0, in=180] ([xshift=5mm]title.east)--
+            (title.center-|frame.east)
+            [rounded corners=\kvtcb@arc] |-
+            (frame.north) -| cycle;
+        },
+    #1
+}{def}
+\makeatother
+%
+% Define Definition environment.
+\makeatletter
+\newtcbtheorem[number within=section]{Definition}{Definition}{enhanced,
+    label=dfn:\thesection.\arabic{\tcbcounter},
+    before skip=2mm,
+    after skip=2mm,
+    breakable,
+    colback=tudelft-bordeaux!2!white,
+    colframe=tudelft-bordeaux,
+    boxrule=0.5mm,
+	attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight},
+    fonttitle=\bfseries,
+    % varwidth boxed title*=-3cm,
+    boxed title style={frame code={
+					\path[fill=tudelft-bordeaux]
+					([yshift=-1mm,xshift=-1mm]frame.north west)
+					arc[start angle=0,end angle=180,radius=1mm]
+					([yshift=-1mm,xshift=1mm]frame.north east)
+					arc[start angle=180,end angle=0,radius=1mm];
+					\path[left color=tudelft-bordeaux,right color=tudelft-bordeaux,
+						middle color=tudelft-bordeaux]
+					([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+					[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+					-- (frame.south east) -- (frame.south west)
+					-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+					[sharp corners]-- cycle;
+				},interior engine=empty,
+		},
+    #1
+}{def}
+\makeatother
+%
+% Define Example environment.
+\makeatletter
+\newtcbtheorem[number within=section]{Example}{Example}{enhanced,
+    label=ex:\thesection.\arabic{\tcbcounter},
+    breakable,
+    colback = tudelft-bosgroen!2!white,
+    colframe = tudelft-bosgroen,
+    coltitle = tudelft-bosgroen,
+    fonttitle = \bfseries,
+    boxrule = 1pt,
+    sharp corners,
+    detach title,
+    before upper = \tcbtitle\par\smallskip,
+    description font = \mdseries,
+    separator sign none,
+    description delimiters parenthesis,
+    #1
+}{def}
+\makeatother
+%
+% Define Theorem environment.
+\makeatletter
+\newtcbtheorem[number within=section]{Theorem}{Theorem}{enhanced,
+    label=thm:\thesection.\arabic{\tcbcounter},
+    breakable,
+    colback = tudelft-paars!2!white,
+    frame hidden,
+    borderline west = {2pt}{0pt}{tudelft-paars},
+    coltitle = tudelft-paars,
+    fonttitle = \bfseries\sffamily,
+    boxrule = 0sp,
+    sharp corners,
+    detach title,
+    before upper = \tcbtitle\par\smallskip,
+    description font = \mdseries,
+    separator sign none,
+    segmentation style={solid, tudelft-paars},
+    #1
+}{def}
+\makeatother
+%
+% Commands for tcolorbox environments.
+\newcommand{\qs}[2]{\begin{Question}{#1}{}#2\end{Question}}
+\newcommand{\dfn}[2]{\begin{Definition}{#1}{}#2\end{Definition}}
+\newcommand{\ex}[2]{\begin{Example}{#1}{}#2\end{Example}}
+\newcommand{\thm}[2]{\begin{Theorem}{#1}{}#2\end{Theorem}}
+\newcommand{\pf}[2]{\begin{proof}[\bfseries Proof #1:]#2\end{proof}}
+\newcommand{\sol}{\textbf{\textit{Solution: }}}
