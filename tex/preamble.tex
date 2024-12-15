@@ -21,7 +21,7 @@
 %
 % Use the `fontenc` package if not using the lualatex compiler.
 \ifdefined\directlua\else
-  \usepackage[T1]{fontenc}                          % Font encoding
+    \usepackage[T1]{fontenc}                        % Font encoding
 \fi
 %
 % Bibliography settings (build with lualatex -> biber -> lualatex x 2).
@@ -33,7 +33,7 @@
     uniquename=init,
     seconds=true,
     urldate=iso,
-    ]{biblatex}
+]{biblatex}
 \addbibresource{references.bib}
 \newcommand\citep{\parencite}
 %
@@ -138,24 +138,24 @@
     colback=tudelft-bordeaux!2!white,
     colframe=tudelft-bordeaux,
     boxrule=0.5mm,
-	attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight},
+    attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight},
     fonttitle=\bfseries,
     % varwidth boxed title*=-3cm,
     boxed title style={frame code={
-					\path[fill=tudelft-bordeaux]
-					([yshift=-1mm,xshift=-1mm]frame.north west)
-					arc[start angle=0,end angle=180,radius=1mm]
-					([yshift=-1mm,xshift=1mm]frame.north east)
-					arc[start angle=180,end angle=0,radius=1mm];
-					\path[left color=tudelft-bordeaux,right color=tudelft-bordeaux,
-						middle color=tudelft-bordeaux]
-					([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
-					[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
-					-- (frame.south east) -- (frame.south west)
-					-- ([xshift=-1mm,yshift=-1mm]frame.north west)
-					[sharp corners]-- cycle;
-				},interior engine=empty,
-		},
+                    \path[fill=tudelft-bordeaux]
+                    ([yshift=-1mm,xshift=-1mm]frame.north west)
+                    arc[start angle=0,end angle=180,radius=1mm]
+                    ([yshift=-1mm,xshift=1mm]frame.north east)
+                    arc[start angle=180,end angle=0,radius=1mm];
+                    \path[left color=tudelft-bordeaux,right color=tudelft-bordeaux,
+                        middle color=tudelft-bordeaux]
+                    ([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+                    [rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+                    -- (frame.south east) -- (frame.south west)
+                    -- ([xshift=-1mm,yshift=-1mm]frame.north west)
+                    [sharp corners]-- cycle;
+                },interior engine=empty,
+        },
     #1
 }{def}
 \makeatother
