@@ -5,10 +5,10 @@ This repository contains my standard LaTeX template, which I mainly use for writ
 
 ## Usage
 
-1. Copy this directory to your desired directory.
+1. Copy this directory to your desired directory and remove the `.git` directory.
 
     ```bash
-    cp -r tu-delft-latex-template/ [your_dir]
+    cp -r tu-delft-latex-template/ [your_dir] && rm -rf [your_dir]/.git/
     ```
 
 2. Edit the `.tex` files to your liking.
