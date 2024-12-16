@@ -10,42 +10,59 @@ Subsection \ref{sss:Subsection} contains Equation \eqref{eq:convection-diffusion
 
 Example citation \citep{baarslag2015learning}
 
-\dfn{Title}{dfnRef}{Definition environment.}
+\dfn{Title}{dfn_ref}{Definition environment.}
 
-Reference to Definition \ref{dfn:dfnRef}.
+Reference to Definition \ref{dfn:dfn_ref}.
 
-\qs{Title}{qsRef}{Question environment.}
+\qs{Title}{qs_ref}{Question environment.}
 
-\sol{Solution to Question \ref{qs:qsRef}}.
+\sol{Solution to Question \ref{qs:qs_ref}}.
 
-\clm{Title}{clmRef}{Claim environment.}
+\clm{Title}{clm_ref}{Claim environment.}
 
-Reference to Claim \ref{clm:clmRef}
+Reference to Claim \ref{clm:clm_ref}
 
-\ex{Title}{exRef}{Example environment.}
+\ex{Title}{ex_ref}{Example environment.}
 
-Reference to Example \ref{ex:exRef}.
+Reference to Example \ref{ex:ex_ref}.
 
-\thm{Title}{thmRef}{Theorem environment.}
+\thm{Title}{thm_ref}{Theorem environment.}
 
-\pf{of Theorem \ref{thm:thmRef}}{Proof environment.}
+\pf{of Theorem \ref{thm:thm_ref}}{Proof environment.}
 
-\cor{Title}{corRef}{Corollary environment.}
+\cor{Title}{cor_ref}{Corollary environment.}
 
-Reference to Corollary \ref{cor:corRef}.
+Reference to Corollary \ref{cor:cor_ref}.
 
-\lem{Title}{lemRef}{Lemma environment.}
+\lem{Title}{lem_ref}{Lemma environment.}
 
-Reference to Lemma \ref{lem:lemRef}.
+Reference to Lemma \ref{lem:lem_ref}.
 
-\prp{Title}{prpRef}{Proposition environment.}
+\prp{Title}{prp_ref}{Proposition environment.}
 
-Reference to Proposition \ref{prp:prpRef}.
+Reference to Proposition \ref{prp:prp_ref}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{Rainbowfish.jpg}
-    \caption[Rainbowfish population as a function of time]{Rainbowfish population as a function of time.
-        This figure is the output of the code in Appendix \ref{app:Example-Python-script} \citep{tudelftopencourseware}.}
+    \includegraphics[width=0.5\textwidth]{Rainbowfish.jpg}
+    \caption[Rainbowfish population as a function of time]{Rainbowfish population as a function of time \citep{tudelftopencourseware}.}
     \label{fig:Rainbowfish}
 \end{figure}
+
+\begin{table}[H]
+    \centering
+    \resizebox{0.28\textwidth}{!}{%
+        \begin{tabular}{c|c}
+            Time (day) & Population (-) \\
+            \hline
+            0.00       & 10.00          \\
+            1.00       & 19.67          \\
+            2.00       & 38.70          \\
+            3.00       & 76.12          \\
+            4.00       & 149.74         \\
+            5.00       & 294.57
+        \end{tabular}%
+    }
+    \caption[Rainbowfish population as a function of time]{Rainbowfish population as a function of time \citep{tudelftopencourseware}.}
+    \label{tab:ohno}
+\end{table}
