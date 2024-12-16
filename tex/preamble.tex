@@ -37,10 +37,6 @@
 \addbibresource{references.bib}
 \newcommand\citep{\parencite}
 %
-% Hyperref setup.
-\usepackage[hidelinks]{hyperref}
-\hypersetup{pdfauthor={Author Name},pdftitle={Title}}
-%
 % Path to graphics folder.
 \graphicspath{{./figures/}}
 %
@@ -205,3 +201,8 @@
 \newcommand{\thm}[3]{\begin{Theorem}{#1}{#2}#3\end{Theorem}}
 \newcommand{\pf}[2]{\begin{proof}[\bfseries Proof #1:]#2\end{proof}}
 \newcommand{\sol}{\textbf{\textit{Solution: }}}
+%
+% Hyperref setup (swap comments for coloured links).
+\usepackage[hidelinks]{hyperref}
+% \usepackage[colorlinks,allcolors=tudelft-cyaan]{hyperref}
+%
