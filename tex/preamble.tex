@@ -1,27 +1,27 @@
 % Include packages.
 \usepackage[tmargin=2cm,rmargin=1in,lmargin=1in,margin=0.85in,bmargin=2cm,footskip=.2in]{geometry}
-\usepackage{isomath}                                % ISO 80000-2 standardized math notation
-\usepackage{mathtools}                              % Math tools (amsmath extension)
-\usepackage{amsthm}                                 % Theorem and proof environments
-\usepackage{sourcesanspro,sourcecodepro,XCharter}   % Body font settings (sourcesanspro for sf, sourcecodepro for tt, XCharter for rm)
-\usepackage[xcharter,vvarbb]{newtxmath}             % Math font settings (XCharter)
-\usepackage{graphicx}                               % Displaying images and figures
-\usepackage[font=sf]{caption}                       % Caption typesetting (sans fonts)
-\usepackage[font=sf]{floatrow}                      % Floating object environments (sans fonts)
-\usepackage{subcaption}                             % Subcaption typesetting
-\usepackage{parskip}                                % Paragraph indentation settings
-\usepackage[exponent-product=\cdot]{siunitx}        % SI units (cdot instead of cross for exponent product)
-\usepackage{enumitem}                               % Control over enumerate, itemize, and description environments
-\usepackage{listings}                               % `lstlisting` environment for code
-\usepackage{lstautogobble}                          % Autogobble for `listings` package
-\usepackage[titletoc]{appendix}                     % Appendices
-\usepackage{xcolor}                                 % Various colour settings
-\usepackage{anyfontsize}                            % Font size settings (font size substitutions)
-\usepackage[most]{tcolorbox}                        % Coloured and framed box environments
+\usepackage{isomath}                                    % ISO 80000-2 standardized math notation
+\usepackage{mathtools}                                  % Math tools (amsmath extension)
+\usepackage{amsthm}                                     % Theorem and proof environments
+\usepackage{sourcesanspro,sourcecodepro,XCharter}       % Body font settings (sourcesanspro for sf, sourcecodepro for tt, XCharter for rm)
+\usepackage[xcharter,vvarbb,scaled=1.07]{newtxmath}     % Math font settings (XCharter)
+\usepackage{graphicx}                                   % Displaying images and figures
+\usepackage[font=sf,justification=centering]{caption}   % Caption typesetting (sans fonts)
+\usepackage[font=sf]{floatrow}                          % Floating object environments (sans fonts)
+\usepackage{subcaption}                                 % Subcaption typesetting
+\usepackage{parskip}                                    % Paragraph indentation settings
+\usepackage[exponent-product=\cdot]{siunitx}            % SI units (cdot instead of cross for exponent product)
+\usepackage{enumitem}                                   % Control over enumerate, itemize, and description environments
+\usepackage{listings}                                   % `lstlisting` environment for code
+\usepackage{lstautogobble}                              % Autogobble for `listings` package
+\usepackage[titletoc]{appendix}                         % Appendices
+\usepackage{xcolor}                                     % Various colour settings
+\usepackage{anyfontsize}                                % Font size settings (font size substitutions)
+\usepackage[most]{tcolorbox}                            % Coloured and framed box environments
 %
 % Use the `fontenc` package if not using the lualatex compiler.
 \ifdefined\directlua\else
-    \usepackage[T1]{fontenc}                        % Font encoding
+    \usepackage[T1]{fontenc}                            % Font encoding
 \fi
 %
 % Bibliography settings (build with lualatex -> biber -> lualatex x 2).
@@ -45,7 +45,7 @@
 \newcommand\p{\mathop{}\!\mathrm{\partial}}
 %
 % Fix strange math encoding (lualatex).
-\DeclareSIPrefix\micro{\text{\textmu}}{-3}          % Otherwise displays μ as ţ
+\DeclareSIPrefix\micro{\text{\textmu}}{-3}              % Otherwise displays μ as ţ
 %
 % Commands for Big-Oh notation.
 \newcommand{\oh}{\mathcal{O}}
@@ -97,34 +97,8 @@
 }
 \lstset{style=code}
 %
-% Define Question environment. Inspired by SeniorMars, latex_template.
+% Define Definition environment. Inspired by SeniorMars, latex_template.
 % https://github.com/SeniorMars/dotfiles/tree/main/latex_template.
-\makeatletter
-\newtcbtheorem[number within=section]{Question}{Question}{enhanced,
-    breakable,
-    colback=white,
-    colframe=tudelft-koningsblauw,
-    attach boxed title to top left={yshift*=-\tcboxedtitleheight},
-    fonttitle=\bfseries,
-    boxed title size=title,
-    boxed title style={%
-            sharp corners,
-            rounded corners=northwest,
-            colback=tcbcolframe,
-            boxrule=0pt,
-        },
-    underlay boxed title={%
-            \path[fill=tcbcolframe] (title.south west)--(title.south east)
-            to[out=0, in=180] ([xshift=5mm]title.east)--
-            (title.center-|frame.east)
-            [rounded corners=\kvtcb@arc] |-
-            (frame.north) -| cycle;
-        },
-    #1
-}{qs}
-\makeatother
-%
-% Define Definition environment.
 \makeatletter
 \newtcbtheorem[number within=section]{Definition}{Definition}{enhanced,
     before skip=2mm,
@@ -154,6 +128,51 @@
     #1
 }{dfn}
 \makeatother
+%
+% Define Question environment.
+\makeatletter
+\newtcbtheorem[number within=section]{Question}{Question}{enhanced,
+    breakable,
+    colback=white,
+    colframe=tudelft-koningsblauw,
+    attach boxed title to top left={yshift*=-\tcboxedtitleheight},
+    fonttitle=\bfseries,
+    boxed title size=title,
+    boxed title style={%
+            sharp corners,
+            rounded corners=northwest,
+            colback=tcbcolframe,
+            boxrule=0pt,
+        },
+    underlay boxed title={%
+            \path[fill=tcbcolframe] (title.south west)--(title.south east)
+            to[out=0, in=180] ([xshift=5mm]title.east)--
+            (title.center-|frame.east)
+            [rounded corners=\kvtcb@arc] |-
+            (frame.north) -| cycle;
+        },
+    #1
+}{qs}
+\makeatother
+%
+% Define Claim environment.
+\makeatletter
+\newtcbtheorem[number within=section]{Claim}{Claim}{enhanced,
+    breakable,
+    colback = tudelft-groen!2!white,
+    frame hidden,
+    borderline west = {2pt}{0pt}{tudelft-groen},
+    coltitle = tudelft-groen,
+    fonttitle = \bfseries\sffamily,
+    boxrule = 0sp,
+    sharp corners,
+    detach title,
+    before upper = \tcbtitle\par\smallskip,
+    description font = \mdseries,
+    separator sign none,
+    segmentation style={solid, tudelft-groen},
+    #1
+}{clm}
 %
 % Define Example environment.
 \makeatletter
@@ -192,15 +211,75 @@
     segmentation style={solid, tudelft-paars},
     #1
 }{thm}
-\makeatother
+%
+% Define Corollary environment.
+\makeatletter
+\newtcbtheorem[number within=section]{Corollary}{Corollary}{enhanced,
+    breakable,
+    colback = tudelft-roze!2!white,
+    frame hidden,
+    borderline west = {2pt}{0pt}{tudelft-roze},
+    coltitle = tudelft-roze,
+    fonttitle = \bfseries\sffamily,
+    boxrule = 0sp,
+    sharp corners,
+    detach title,
+    before upper = \tcbtitle\par\smallskip,
+    description font = \mdseries,
+    separator sign none,
+    segmentation style={solid, tudelft-roze},
+    #1
+}{cor}
+%
+% Define Lemma environment.
+\makeatletter
+\newtcbtheorem[number within=section]{Lemma}{Lemma}{enhanced,
+    breakable,
+    colback = tudelft-rood!2!white,
+    frame hidden,
+    borderline west = {2pt}{0pt}{tudelft-rood},
+    coltitle = tudelft-rood,
+    fonttitle = \bfseries\sffamily,
+    boxrule = 0sp,
+    sharp corners,
+    detach title,
+    before upper = \tcbtitle\par\smallskip,
+    description font = \mdseries,
+    separator sign none,
+    segmentation style={solid, tudelft-rood},
+    #1
+}{lem}
+%
+% Define Proposition environment.
+\makeatletter
+\newtcbtheorem[number within=section]{Proposition}{Proposition}{enhanced,
+    breakable,
+    colback = tudelft-donkerblauw!2!white,
+    frame hidden,
+    borderline west = {2pt}{0pt}{tudelft-donkerblauw},
+    coltitle = tudelft-donkerblauw,
+    fonttitle = \bfseries\sffamily,
+    boxrule = 0sp,
+    sharp corners,
+    detach title,
+    before upper = \tcbtitle\par\smallskip,
+    description font = \mdseries,
+    separator sign none,
+    segmentation style={solid, tudelft-donkerblauw},
+    #1
+}{prp}
 %
 % Commands for tcolorbox environments.
-\newcommand{\qs}[3]{\begin{Question}{#1}{#2}#3\end{Question}}
 \newcommand{\dfn}[3]{\begin{Definition}{#1}{#2}#3\end{Definition}}
+\newcommand{\qs}[3]{\begin{Question}{#1}{#2}#3\end{Question}}
+\newcommand{\sol}{\textbf{\textit{Solution: }}}
+\newcommand{\clm}[3]{\begin{Claim}{#1}{#2}#3\end{Claim}}
 \newcommand{\ex}[3]{\begin{Example}{#1}{#2}#3\end{Example}}
 \newcommand{\thm}[3]{\begin{Theorem}{#1}{#2}#3\end{Theorem}}
 \newcommand{\pf}[2]{\begin{proof}[\bfseries Proof #1:]#2\end{proof}}
-\newcommand{\sol}{\textbf{\textit{Solution: }}}
+\newcommand{\cor}[3]{\begin{Corollary}{#1}{#2}#3\end{Corollary}}
+\newcommand{\lem}[3]{\begin{Lemma}{#1}{#2}#3\end{Lemma}}
+\newcommand{\prp}[3]{\begin{Proposition}{#1}{#2}#3\end{Proposition}}
 %
 % Hyperref setup (swap comments for coloured links).
 \usepackage[hidelinks]{hyperref}
