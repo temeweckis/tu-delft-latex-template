@@ -1,6 +1,6 @@
-\section{Section}
+\section{Section}\label{sse:Section}
 
-\subsection{Subsection}
+\subsection{Subsection}\label{sss:Subsection}
 
 Example citation \citep{baarslag2015learning}
 
@@ -35,3 +35,11 @@ Reference to Lemma \ref{lem:lemRef}.
 \prp{Title}{prpRef}{Proposition environment.}
 
 Reference to Proposition \ref{prp:prpRef}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Rainbowfish.jpg}
+    \caption{Rainbowfish population as a function of time.
+        This figure is the output of the code in Appendix \ref{app:Example-Python-script}  \citep{tudelftopencourseware}.}
+    \label{fig:Rainbowfish}
+\end{figure}
