@@ -249,7 +249,26 @@
     segmentation style={solid, tudelft-rood},
     #1
 }{lem}
-
+%
+% Define Proposition environment.
+\makeatletter
+\newtcbtheorem[number within=section]{Proposition}{Proposition}{enhanced,
+    breakable,
+    colback = tudelft-donkerblauw!2!white,
+    frame hidden,
+    borderline west = {2pt}{0pt}{tudelft-donkerblauw},
+    coltitle = tudelft-donkerblauw,
+    fonttitle = \bfseries\sffamily,
+    boxrule = 0sp,
+    sharp corners,
+    detach title,
+    before upper = \tcbtitle\par\smallskip,
+    description font = \mdseries,
+    separator sign none,
+    segmentation style={solid, tudelft-donkerblauw},
+    #1
+}{prp}
+%
 % Commands for tcolorbox environments.
 \newcommand{\qs}[3]{\begin{Question}{#1}{#2}#3\end{Question}}
 \newcommand{\dfn}[3]{\begin{Definition}{#1}{#2}#3\end{Definition}}
@@ -258,6 +277,7 @@
 \newcommand{\clm}[3]{\begin{Claim}{#1}{#2}#3\end{Claim}}
 \newcommand{\cor}[3]{\begin{Corollary}{#1}{#2}#3\end{Corollary}}
 \newcommand{\lem}[3]{\begin{Lemma}{#1}{#2}#3\end{Lemma}}
+\newcommand{\prp}[3]{\begin{Proposition}{#1}{#2}#3\end{Proposition}}
 \newcommand{\pf}[2]{\begin{proof}[\bfseries Proof #1:]#2\end{proof}}
 \newcommand{\sol}{\textbf{\textit{Solution: }}}
 %
