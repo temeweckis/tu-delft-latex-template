@@ -192,13 +192,32 @@
     segmentation style={solid, tudelft-paars},
     #1
 }{thm}
-\makeatother
+%
+% Define Claim environment.
+\makeatletter
+\newtcbtheorem[number within=section]{Claim}{Claim}{enhanced,
+    breakable,
+    colback = tudelft-groen!2!white,
+    frame hidden,
+    borderline west = {2pt}{0pt}{tudelft-groen},
+    coltitle = tudelft-groen,
+    fonttitle = \bfseries\sffamily,
+    boxrule = 0sp,
+    sharp corners,
+    detach title,
+    before upper = \tcbtitle\par\smallskip,
+    description font = \mdseries,
+    separator sign none,
+    segmentation style={solid, tudelft-groen},
+    #1
+}{clm}
 %
 % Commands for tcolorbox environments.
 \newcommand{\qs}[3]{\begin{Question}{#1}{#2}#3\end{Question}}
 \newcommand{\dfn}[3]{\begin{Definition}{#1}{#2}#3\end{Definition}}
 \newcommand{\ex}[3]{\begin{Example}{#1}{#2}#3\end{Example}}
 \newcommand{\thm}[3]{\begin{Theorem}{#1}{#2}#3\end{Theorem}}
+\newcommand{\clm}[3]{\begin{Claim}{#1}{#2}#3\end{Claim}}
 \newcommand{\pf}[2]{\begin{proof}[\bfseries Proof #1:]#2\end{proof}}
 \newcommand{\sol}{\textbf{\textit{Solution: }}}
 %
