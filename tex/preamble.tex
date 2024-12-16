@@ -97,34 +97,8 @@
 }
 \lstset{style=code}
 %
-% Define Question environment. Inspired by SeniorMars, latex_template.
+% Define Definition environment. Inspired by SeniorMars, latex_template.
 % https://github.com/SeniorMars/dotfiles/tree/main/latex_template.
-\makeatletter
-\newtcbtheorem[number within=section]{Question}{Question}{enhanced,
-    breakable,
-    colback=white,
-    colframe=tudelft-koningsblauw,
-    attach boxed title to top left={yshift*=-\tcboxedtitleheight},
-    fonttitle=\bfseries,
-    boxed title size=title,
-    boxed title style={%
-            sharp corners,
-            rounded corners=northwest,
-            colback=tcbcolframe,
-            boxrule=0pt,
-        },
-    underlay boxed title={%
-            \path[fill=tcbcolframe] (title.south west)--(title.south east)
-            to[out=0, in=180] ([xshift=5mm]title.east)--
-            (title.center-|frame.east)
-            [rounded corners=\kvtcb@arc] |-
-            (frame.north) -| cycle;
-        },
-    #1
-}{qs}
-\makeatother
-%
-% Define Definition environment.
 \makeatletter
 \newtcbtheorem[number within=section]{Definition}{Definition}{enhanced,
     before skip=2mm,
@@ -154,6 +128,51 @@
     #1
 }{dfn}
 \makeatother
+%
+% Define Question environment.
+\makeatletter
+\newtcbtheorem[number within=section]{Question}{Question}{enhanced,
+    breakable,
+    colback=white,
+    colframe=tudelft-koningsblauw,
+    attach boxed title to top left={yshift*=-\tcboxedtitleheight},
+    fonttitle=\bfseries,
+    boxed title size=title,
+    boxed title style={%
+            sharp corners,
+            rounded corners=northwest,
+            colback=tcbcolframe,
+            boxrule=0pt,
+        },
+    underlay boxed title={%
+            \path[fill=tcbcolframe] (title.south west)--(title.south east)
+            to[out=0, in=180] ([xshift=5mm]title.east)--
+            (title.center-|frame.east)
+            [rounded corners=\kvtcb@arc] |-
+            (frame.north) -| cycle;
+        },
+    #1
+}{qs}
+\makeatother
+%
+% Define Claim environment.
+\makeatletter
+\newtcbtheorem[number within=section]{Claim}{Claim}{enhanced,
+    breakable,
+    colback = tudelft-groen!2!white,
+    frame hidden,
+    borderline west = {2pt}{0pt}{tudelft-groen},
+    coltitle = tudelft-groen,
+    fonttitle = \bfseries\sffamily,
+    boxrule = 0sp,
+    sharp corners,
+    detach title,
+    before upper = \tcbtitle\par\smallskip,
+    description font = \mdseries,
+    separator sign none,
+    segmentation style={solid, tudelft-groen},
+    #1
+}{clm}
 %
 % Define Example environment.
 \makeatletter
@@ -192,25 +211,6 @@
     segmentation style={solid, tudelft-paars},
     #1
 }{thm}
-%
-% Define Claim environment.
-\makeatletter
-\newtcbtheorem[number within=section]{Claim}{Claim}{enhanced,
-    breakable,
-    colback = tudelft-groen!2!white,
-    frame hidden,
-    borderline west = {2pt}{0pt}{tudelft-groen},
-    coltitle = tudelft-groen,
-    fonttitle = \bfseries\sffamily,
-    boxrule = 0sp,
-    sharp corners,
-    detach title,
-    before upper = \tcbtitle\par\smallskip,
-    description font = \mdseries,
-    separator sign none,
-    segmentation style={solid, tudelft-groen},
-    #1
-}{clm}
 %
 % Define Corollary environment.
 \makeatletter
@@ -270,16 +270,16 @@
 }{prp}
 %
 % Commands for tcolorbox environments.
-\newcommand{\qs}[3]{\begin{Question}{#1}{#2}#3\end{Question}}
 \newcommand{\dfn}[3]{\begin{Definition}{#1}{#2}#3\end{Definition}}
+\newcommand{\qs}[3]{\begin{Question}{#1}{#2}#3\end{Question}}
+\newcommand{\sol}{\textbf{\textit{Solution: }}}
+\newcommand{\clm}[3]{\begin{Claim}{#1}{#2}#3\end{Claim}}
 \newcommand{\ex}[3]{\begin{Example}{#1}{#2}#3\end{Example}}
 \newcommand{\thm}[3]{\begin{Theorem}{#1}{#2}#3\end{Theorem}}
-\newcommand{\clm}[3]{\begin{Claim}{#1}{#2}#3\end{Claim}}
+\newcommand{\pf}[2]{\begin{proof}[\bfseries Proof #1:]#2\end{proof}}
 \newcommand{\cor}[3]{\begin{Corollary}{#1}{#2}#3\end{Corollary}}
 \newcommand{\lem}[3]{\begin{Lemma}{#1}{#2}#3\end{Lemma}}
 \newcommand{\prp}[3]{\begin{Proposition}{#1}{#2}#3\end{Proposition}}
-\newcommand{\pf}[2]{\begin{proof}[\bfseries Proof #1:]#2\end{proof}}
-\newcommand{\sol}{\textbf{\textit{Solution: }}}
 %
 % Hyperref setup (swap comments for coloured links).
 \usepackage[hidelinks]{hyperref}
