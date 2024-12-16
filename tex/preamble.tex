@@ -105,7 +105,6 @@
 % https://github.com/SeniorMars/dotfiles/tree/main/latex_template.
 \makeatletter
 \newtcbtheorem[number within=section]{Question}{Question}{enhanced,
-    label=qs:\thesection.\arabic{\tcbcounter},
     breakable,
     colback=white,
     colframe=tudelft-koningsblauw,
@@ -126,13 +125,12 @@
             (frame.north) -| cycle;
         },
     #1
-}{def}
+}{qs}
 \makeatother
 %
 % Define Definition environment.
 \makeatletter
 \newtcbtheorem[number within=section]{Definition}{Definition}{enhanced,
-    label=dfn:\thesection.\arabic{\tcbcounter},
     before skip=2mm,
     after skip=2mm,
     breakable,
@@ -158,13 +156,12 @@
                 },interior engine=empty,
         },
     #1
-}{def}
+}{dfn}
 \makeatother
 %
 % Define Example environment.
 \makeatletter
 \newtcbtheorem[number within=section]{Example}{Example}{enhanced,
-    label=ex:\thesection.\arabic{\tcbcounter},
     breakable,
     colback = tudelft-bosgroen!2!white,
     colframe = tudelft-bosgroen,
@@ -178,13 +175,12 @@
     separator sign none,
     description delimiters parenthesis,
     #1
-}{def}
+}{ex}
 \makeatother
 %
 % Define Theorem environment.
 \makeatletter
 \newtcbtheorem[number within=section]{Theorem}{Theorem}{enhanced,
-    label=thm:\thesection.\arabic{\tcbcounter},
     breakable,
     colback = tudelft-paars!2!white,
     frame hidden,
@@ -199,13 +195,13 @@
     separator sign none,
     segmentation style={solid, tudelft-paars},
     #1
-}{def}
+}{thm}
 \makeatother
 %
 % Commands for tcolorbox environments.
-\newcommand{\qs}[2]{\begin{Question}{#1}{}#2\end{Question}}
-\newcommand{\dfn}[2]{\begin{Definition}{#1}{}#2\end{Definition}}
-\newcommand{\ex}[2]{\begin{Example}{#1}{}#2\end{Example}}
-\newcommand{\thm}[2]{\begin{Theorem}{#1}{}#2\end{Theorem}}
+\newcommand{\qs}[3]{\begin{Question}{#1}{#2}#3\end{Question}}
+\newcommand{\dfn}[3]{\begin{Definition}{#1}{#2}#3\end{Definition}}
+\newcommand{\ex}[3]{\begin{Example}{#1}{#2}#3\end{Example}}
+\newcommand{\thm}[3]{\begin{Theorem}{#1}{#2}#3\end{Theorem}}
 \newcommand{\pf}[2]{\begin{proof}[\bfseries Proof #1:]#2\end{proof}}
 \newcommand{\sol}{\textbf{\textit{Solution: }}}
