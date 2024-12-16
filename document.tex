@@ -19,10 +19,11 @@
 \begin{document}
 
 %% Titlepage.
+\pagenumbering{roman}\thispagestyle{empty}
 \input{tex/titlepage.tex}
 
 %% Table of contents.
-\vspace*{1cm}
+\setcounter{page}{2}\vspace*{1cm}
 {\setlength{\baselineskip}{0.6cm}\tableofcontents}
 \newpage
 
@@ -36,6 +37,7 @@
 \newpage
 
 %% Main body.
+\pagenumbering{arabic}
 \input{tex/body.tex}
 \newpage
 
