@@ -12,9 +12,13 @@ This repository contains my standard LaTeX template, which I mainly use for writ
     ```
 
 2. Edit the `.tex` files to your liking.
-    * In `preamble.tex`, remember to change the `hyperref` settings for `pdfauthor` and `pdftitle`!
+   If necessary, please replace references to TU Delft with your own institution.
 
 3. Compile the document with `lualatex` and `biber`, either with the provided `Makefile` or your own recipe.
+
+    ```bash
+    make document.pdf
+    ```
 
 4. Optionally, use the `Makefile` to clean the directory.
 
@@ -26,5 +30,8 @@ This repository contains my standard LaTeX template, which I mainly use for writ
 
 * `a4paper` paper size with the `article` document class.
 * `XCharter` for serif, `sourcesanspro` for sans serif, and `sourcecodepro` for monospace.
-* Bibliography management with `biblatex`.
-* Designed for use with `lualatex` and `biber`, but likely compatible with other compilers.
+* Bibliography management with `biblatex` and the `biber` backend.
+* This template has been designed for use with `texlive/lualatex`, but it's likely compatible with other compilers. I've confirmed it to compile properly in the following environments:
+  * Overleaf with `pdflatex`, Tex Live version 2024.
+  * Overleaf with `lualatex`, Tex Live version 2024.
+  * **Note:** I have had problems with `XeLaTeX` in the past, so I recommend using `pdflatex` or `lualatex` instead.
