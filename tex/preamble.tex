@@ -1,10 +1,14 @@
 % Include packages.
 \usepackage[tmargin=2cm,rmargin=1in,lmargin=1in,margin=0.85in,bmargin=2cm,footskip=.2in]{geometry}
+\usepackage[english]{babel}                             % Advanced language support
+\usepackage{csquotes}                                   % Advanced inline and display quotations (recommended with babel)
 \usepackage{isomath}                                    % ISO 80000-2 standardized math notation
 \usepackage{mathtools}                                  % Math tools (amsmath extension)
 \usepackage{amsthm}                                     % Theorem and proof environments
-\usepackage{sourcesanspro,sourcecodepro,XCharter}       % Body font settings (sourcesanspro for sf, sourcecodepro for tt, XCharter for rm)
-\usepackage[xcharter,vvarbb,scaled=1.07]{newtxmath}     % Math font settings (XCharter)
+\usepackage[type1]{sourcesanspro}                       % Body font settings (sourcesanspro for sf)
+\usepackage[scaled=1.04]{sourcecodepro}                 % Body font settings (sourcecodepro for tt)
+\usepackage[scaled=0.98,sups,osf]{XCharter}             % Body font settings (XCharter for rm)
+\usepackage[xcharter,vvarbb,scaled=1.05]{newtxmath}     % Math font settings (XCharter)
 \usepackage{graphicx}                                   % Displaying images and figures
 \usepackage[font=sf,justification=centering]{caption}   % Caption typesetting (sans fonts)
 \usepackage[font=sf]{floatrow}                          % Floating object environments (sans fonts)
@@ -18,6 +22,9 @@
 \usepackage{xcolor}                                     % Various colour settings
 \usepackage{anyfontsize}                                % Font size settings (font size substitutions)
 \usepackage[most]{tcolorbox}                            % Coloured and framed box environments
+%
+% Increase linespread with XCharter (see doc: https://texdoc.org/serve/xcharter-doc.pdf/0)
+\linespread{1.04}
 %
 % Use the `fontenc` package if not using the lualatex compiler.
 \ifdefined\directlua\else
