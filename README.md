@@ -11,11 +11,20 @@ It contains several packages and shortcuts which I find particularly useful.
     cp -r tu-delft-latex-template/ [your_dir]
     ```
 
-2. Edit the file "document.tex" to your liking.
+2. Edit the `.tex` files to your liking.
+    * In `preamble.tex`, remember to change the `hyperref` settings for `pdfauthor` and `pdftitle`!
+
+3. Compile the document with `lualatex` and `biber`.
+
+4. Use the `Makefile` to clean the directory.
+
+    ```bash
+    make clean
+    ```
 
 ## Typesetting and LaTeX settings
 
 * `a4paper` paper size with the `article` document class.
 * `XCharter` for serif, `sourcesanspro` for sans serif, and `sourcecodepro` for monospace.
 * Bibliography management with `biblatex`.
-* Designed for use with `lualatex` and `biber`.
+* Designed for use with `lualatex` and `biber`, but likely compatible with other compilers.
