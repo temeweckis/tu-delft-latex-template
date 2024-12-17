@@ -1,10 +1,13 @@
-# Description: A simple Makefile for compiling LaTeX documents with lualatex and biber.
+# Description: A simple Makefile for compiling LaTeX documents with lualatex and biber. Designed for use with the GNU Make utility in bash.
 THIS_FILE := $(lastword $(MAKEFILE_LIST))
 TARGET := document
 
 # Define lualatex and biber executables
 lualatex := /usr/bin/lualatex
 biber := /usr/bin/biber
+
+# Define temporary files to be removed
+TMPFILES := *.pdf *.out *.aux *.lof *.log *.lot *.fls *.out *.toc *.fmt *.fot *.cb *.cb2 .*.lb *.ptb *.tod *.bbl *.bcf *.blg *-blx.bib *.run.xml *.fdb_latexmk *.synctex* *.synctex.gz* *.pdfsync *.rubbercache rubber.cache
 
 all: $(TARGET).pdf
 
@@ -31,4 +34,4 @@ biber:
 
 # Define the clean target
 clean:
-	rm -f *.pdf *.out *aux *bbl *blg *log *toc *.ptb *.tod *.fls *.fdb_latexmk *.lof *.bcf *.run.xml *synctex.gz
+	rm -f $(TMPFILES)
