@@ -35,7 +35,7 @@ This template can be viewed in Overleaf using [this link](https://www.overleaf.c
 ## Typesetting and LaTeX settings
 
 * `a4paper` paper size and `10pt` font size with the `article` document class.
-* Body fonts: `XCharter` for serif, `sourcesanspro` for sans serif, and `sourcecodepro` for monospace. Typesetting according to `XCharter` [documentation guidelines](https://texdoc.org/serve/xcharter-doc.pdf/0).
+* Body fonts: `XCharter` for serif, `sourcesanspro` for sans serif, and `sourcecodepro` for monospace. Typesetting adapted from `XCharter` [documentation guidelines](https://texdoc.org/serve/xcharter-doc.pdf/0).
 * Maths fonts: `newtxmath` with the `xcharter` option.
 * Bibliography management with `biblatex` and the `biber` backend.
 * This template has been designed for use with `texlive/lualatex`, but it's likely compatible with other compilers. I've confirmed it to compile properly in the following environments:
