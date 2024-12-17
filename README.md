@@ -16,7 +16,7 @@ This template can be viewed in Overleaf using [this link](https://www.overleaf.c
     ```
 
 2. Edit and add files to your liking.
-   Please replace references to TU Delft if you are not affiliated with the university.
+   Please remove references to TU Delft if you are not affiliated with the university.
 
 3. Compile the document with `lualatex` and `biber`, either with the provided `Makefile` or your own recipe.
 
