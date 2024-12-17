@@ -6,7 +6,7 @@
 \usepackage{mathtools}                                  % Math tools (amsmath extension)
 \usepackage{amsthm}                                     % Theorem and proof environments
 \usepackage[scaled=0.98,sups,osf]{XCharter}             % Body font settings (XCharter for rm)
-\usepackage[scaled=1.04,ttdefault]{sourcecodepro}       % Body font settings (sourcecodepro for tt)
+\usepackage[scaled=0.94,ttdefault]{sourcecodepro}       % Body font settings (sourcecodepro for tt)
 \usepackage[type1]{sourcesanspro}                       % Body font settings (sourcesanspro for sf)
 \usepackage[xcharter,vvarbb,scaled=1.05]{newtxmath}     % Math font settings (XCharter)
 \usepackage{graphicx}                                   % Displaying images and figures
@@ -81,6 +81,11 @@
 \definecolor{tudelft-groen}{RGB}{108,194,74}
 \definecolor{tudelft-bosgroen}{RGB}{0,155,119}
 \definecolor{tudelft-donkergrijs}{RGB}{92,92,92}
+%
+% Define environment for equation parameters.
+\newenvironment{conditions}
+{\par\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+        {\end{tabular}\par\vspace{0.5\belowdisplayskip}}
 %
 % Define default code environment.
 \lstdefinestyle{code}{
