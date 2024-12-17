@@ -16,7 +16,7 @@ This template can be viewed in Overleaf using [this link](https://www.overleaf.c
     ```
 
 2. Edit and add files to your liking.
-   Please replace references to TU Delft according to your affiliation.
+   Please replace references to TU Delft if you are not affiliated with the university.
 
 3. Compile the document with `lualatex` and `biber`, either with the provided `Makefile` or your own recipe.
 
@@ -40,4 +40,4 @@ This template can be viewed in Overleaf using [this link](https://www.overleaf.c
 * Bibliography management with `biblatex` and the `biber` backend.
 * This template has been designed for use with `texlive/lualatex`, but it's likely compatible with other compilers. I've confirmed it to compile properly in the following environments:
   * Overleaf with `pdflatex`, Tex Live version 2024.
-  * **Note:** I have had problems with `XeLaTeX` in the past, so I recommend using `pdflatex` or `lualatex` instead.
+  <!-- * **Note:** I have had problems with `XeLaTeX` in the past, so I recommend using `pdflatex` or `lualatex` instead. -->
