@@ -9,10 +9,10 @@ This template can be viewed in Overleaf using [this link](https://www.overleaf.c
 
 1. Create your project using this template, either with the `Use this template` feature in GitHub or by creating a copy of the Overleaf project.
 
-   Alternatively, you can clone this repository locally, copy it to your desired directory, and remove the `.git` directory.
+   Alternatively, you can clone this repository locally, copy its contents to your desired directory, and remove the contents of `.git/` and `.gitignore`.
 
     ```bash
-    cp -r tu-delft-latex-template/ [your_dir] && rm -rf [your_dir]/.git/
+    cp -r tu-delft-latex-template/. [your_dir] && rm -rf [your_dir]/.git/ [your_dir]/.gitignore
     ```
 
 2. Edit and add files to your liking.
