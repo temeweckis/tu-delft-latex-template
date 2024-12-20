@@ -23,6 +23,7 @@
 \usepackage{xcolor}                                     % Various colour settings
 \usepackage{anyfontsize}                                % Font size settings (font size substitutions)
 \usepackage[most]{tcolorbox}                            % Coloured and framed box environments
+\usepackage[showdow,en-US]{datetime2}                   % Date and time settings
 %
 % Increase linespread with XCharter (see doc: https://texdoc.org/serve/xcharter-doc.pdf/0)
 \linespread{1.04}
@@ -48,12 +49,16 @@
 % Path to graphics folder.
 \graphicspath{{./figures/}}
 %
-% Commands for differentials. Redefines the underdot command!
-\renewcommand\d{\mathop{}\!\mathrm{d}}
-\newcommand\p{\mathop{}\!\mathrm{\partial}}
-%
 % Fix strange math encoding (lualatex).
 \DeclareSIPrefix\micro{\text{\textmu}}{-3}              % Otherwise displays μ as ţ
+%
+% Display all vectors created using `\vec` with bold italics (given by `\vectorsym`).
+\renewcommand{\vec}{\vectorsym}
+%
+% Commands for gradient, divergence, and curl operators.
+\DeclareMathOperator{\Grad}{grad}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\Curl}{curl}
 %
 % Commands for Big-Oh notation.
 \newcommand{\oh}{\mathcal{O}}
@@ -297,4 +302,8 @@
 % Hyperref setup (swap comments for coloured links).
 \usepackage[hidelinks]{hyperref}
 % \usepackage[colorlinks,allcolors=tudelft-cyaan]{hyperref}
+%
+% Commands for differentials. Redefines the underdot command! Should be below `hyperref`.
+\renewcommand\d{\mathop{}\!\mathrm{d}}
+\newcommand\p{\mathop{}\!\mathrm{\partial}}
 %
