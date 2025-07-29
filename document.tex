@@ -21,10 +21,11 @@
 \fancypagestyle{fancy}{
   \fancyhead{} % clear all header fields
   \fancyfoot{} % clear all footer fields
-  \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
-  \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+  \fancyhead[LE]{\nouppercase{\leftmark}}
+  \fancyhead[RO]{\nouppercase{\rightmark}}
   \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{0pt}
 }
 \fancypagestyle{plain}{
   \fancyhf{}
