@@ -40,4 +40,5 @@ This template can be viewed in Overleaf using [this link](https://www.overleaf.c
 * Bibliography management with `biblatex` and the `biber` backend.
 * This template has been designed for use with `texlive/lualatex`, but it's likely compatible with other compilers. I've confirmed it to compile properly in the following environments:
   * Overleaf with `pdflatex`, Tex Live version 2024.
+  * Overleaf with `lualatex`, Tex Live version 2024.
   <!-- * **Note:** I have had problems with `XeLaTeX` in the past, so I recommend using `pdflatex` or `lualatex` instead. -->
