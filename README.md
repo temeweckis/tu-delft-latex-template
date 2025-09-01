@@ -36,7 +36,7 @@ This template can be viewed in Overleaf using [this link](https://www.overleaf.c
 
 * `a4paper` paper size and `10pt` font size with the `article` document class.
 * Body fonts: `erewhon` (derived from Utopia) for serif, `sourcesanspro` for sans serif, and `sourcecodepro` for monospace.
-* Maths fonts: `newtxmath` with the `utopia` option.
+* Maths fonts: `newtxmath`.
 * Bibliography management with `biblatex` and the `biber` backend.
 * This template has been designed for use with `texlive/lualatex`, but it's likely compatible with other compilers. I've confirmed it to compile properly in the following environments:
   * Overleaf with `pdflatex`, Tex Live version 2024.
