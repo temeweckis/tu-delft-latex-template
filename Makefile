@@ -3,8 +3,8 @@ THIS_FILE := $(lastword $(MAKEFILE_LIST))
 TARGET := document
 
 # Define lualatex and biber executables
-lualatex := /usr/bin/lualatex
-biber := /usr/bin/biber
+lualatex := lualatex
+biber := biber
 
 # Define temporary files to be removed
 TMPFILES := *.pdf *.out *.aux *.lof *.log *.lot *.fls *.out *.toc *.fmt *.fot *.cb *.cb2 .*.lb *.ptb *.tod *.bbl *.bcf *.blg *-blx.bib *.run.xml *.fdb_latexmk *.synctex* *.synctex.gz* *.pdfsync *.rubbercache rubber.cache

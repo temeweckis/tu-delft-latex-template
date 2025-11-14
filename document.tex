@@ -6,16 +6,21 @@
 % Preamble.
 \input{tex/preamble.tex}
 %
-% Document author and title metadata.
-\hypersetup{pdfauthor={Author Name},pdftitle={Title}}
-%
 % Title settings.
-\newcommand{\mycoursecode}{Course code}
-\newcommand{\mycoursetitle}{Course title}
 \newcommand{\mytitle}{Title}
+\newcommand{\mycoursetitle}{Course title}
+\newcommand{\mycoursecode}{Course code}
 \newcommand{\myauthor}{Author Name 1 (...) \\ Author Name 2 (...)}
 \newcommand{\mygroup}{}
 \newcommand{\mydate}{\today}
+%
+% Document author and title metadata.
+\hypersetup{pdfauthor={Author Name},pdftitle={Title}}
+%
+% Setup for \maketitle.
+\title{\mytitle}
+\author{\myauthor}
+\date{\mydate}
 %
 % Begin document.
 \begin{document}
@@ -40,7 +45,9 @@
 % \newpage
 
 %% Main body.
-\pagestyle{fancy}\pagenumbering{arabic}
+\pagestyle{fancy}  % Use fancy page style for the main body.
+% \pagestyle{plain}\maketitle  % Use plain page style with \maketitle if no titlepage is used.
+\pagenumbering{arabic}
 \input{tex/body.tex}
 \newpage
 
