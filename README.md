@@ -35,10 +35,10 @@ This template can be viewed in Overleaf using [this link](https://www.overleaf.c
 ## Typesetting and LaTeX settings
 
 * `a4paper` paper size and `10pt` font size with the `article` document class.
-* Body fonts: `erewhon` (derived from Utopia) for serif, `sourcesanspro` for sans serif, and `sourcecodepro` for monospace.
-* Maths fonts: `newtxmath`.
+* Body fonts: `XCharter` for serif, `Lato` for sans serif, and `sourcecodepro` for monospace.
+* Maths fonts: `XCharter-Math`.
 * Bibliography management with `biblatex` and the `biber` backend.
 * This template has been designed for use with `texlive/lualatex`, but it's likely compatible with other compilers. I've confirmed it to compile properly in the following environments:
-  * Overleaf with `pdflatex`, Tex Live version 2024.
-  * Overleaf with `lualatex`, Tex Live version 2024.
+  * Overleaf with `pdflatex`, Tex Live version 2025.
+  * Overleaf with `lualatex`, Tex Live version 2025.
   <!-- * **Note:** I have had problems with `XeLaTeX` in the past, so I recommend using `pdflatex` or `lualatex` instead. -->
