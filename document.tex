@@ -10,12 +10,12 @@
 \newcommand{\mytitle}{Title}
 \newcommand{\mycoursetitle}{Course title}
 \newcommand{\mycoursecode}{Course code}
-\newcommand{\myauthor}{Author Name 1 (...) \\ Author Name 2 (...)}
+\newcommand{\myauthor}{Author Name 1 (...)\\ Author Name 2 (...)}
 \newcommand{\mygroup}{}
 \newcommand{\mydate}{\today}
 %
 % Document author and title metadata.
-\hypersetup{pdfauthor={Author Name},pdftitle={Title}}
+{\pdfstringdefDisableCommands{\def\\{, }}\hypersetup{pdfauthor={\myauthor},pdftitle={\mytitle}}}
 %
 % Setup for \maketitle.
 \title{\mytitle}
