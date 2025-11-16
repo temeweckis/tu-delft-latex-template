@@ -1,10 +1,10 @@
-% Include packages.
+%% Include packages.
 \usepackage[top=0.95in,bottom=1in,left=0.85in,right=0.85in]{geometry}
 \usepackage[english]{babel}                             % Advanced language support
 \usepackage{fancyhdr}                                   % Fancy headers and footers
 \usepackage{amsthm}                                     % Theorem and proof environments
-%
-% Use XCharter for text, Source Code Pro for monospace, and Lato for sans-serif, and XCharter-Math for math fonts (with caligraphic STIX Two Math).
+
+%% Use XCharter for text, Source Code Pro for monospace, Lato for sans-serif, and XCharter-Math for math.
 \usepackage{ifluatex}\ifluatex                          % If using lualatex, use fontspec to set the fonts
     \usepackage[no-math]{fontspec}
     \setmainfont{XCharter}
@@ -24,7 +24,8 @@
     \renewcommand{\vec}{\boldsymbol}                    % Display all vectors created using `\vec` with bold italics
     \let\emptyset\varnothing                            % Use different empty set symbol to match LuaLaTeX setup
 \fi
-%
+
+%% Additional packages.
 \usepackage{csquotes}                                   % Advanced inline and display quotations (recommended with babel)
 \usepackage{graphicx}                                   % Displaying images and figures
 \usepackage{caption}                                    % Caption typesetting
@@ -43,14 +44,14 @@
 \usepackage[most]{tcolorbox}                            % Coloured and framed box environments
 \usepackage[showdow,en-US]{datetime2}                   % Date and time settings
 \usepackage{multicol}                                   % Multicolumn environment
-%
-% Increase linespread.
+
+%% Increase linespread.
 \linespread{1.04}
-%
-% Caption formatting.
+
+%% Caption formatting.
 \captionsetup{font=sf,labelfont=bf,justification=centering,width=0.9\textwidth}
-%
-% Bibliography settings (build with lualatex -> biber -> lualatex x 2).
+
+%% Bibliography settings (build with lualatex -> biber -> lualatex x 2).
 \usepackage[style=authoryear,
     maxbibnames=5,
     maxcitenames=2,
@@ -62,26 +63,26 @@
 ]{biblatex}
 \addbibresource{references.bib}
 \newcommand\citep{\parencite}
-%
-% Path to graphics folder.
+
+%% Path to graphics folder.
 \graphicspath{{./figures}}
-%
-% Commands for gradient, divergence, and curl operators.
+
+%% Commands for gradient, divergence, and curl operators.
 \DeclareMathOperator{\Grad}{grad}
 \DeclareMathOperator{\Div}{div}
 \DeclareMathOperator{\Curl}{curl}
-%
-% Commands for Big-Oh notation.
+
+%% Commands for Big-Oh notation.
 \newcommand{\oh}{\mathcal{O}}
-%
-% Commands for the set of real numbers and Lagrangian/Laplace.
+
+%% Commands for the set of real numbers and Lagrangian/Laplace.
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\La}{\mathscr{L}}
-%
-% Shrink bullet points.
+
+%% Shrink bullet points.
 \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
-%
-% Define TU Delft colors.
+
+%% Define TU Delft colors.
 \definecolor{tudelft-cyaan}{RGB}{0,166,214}
 \definecolor{tudelft-wit}{RGB}{255,255,255}
 \definecolor{tudelft-zwart}{RGB}{0,0,0}
@@ -97,13 +98,13 @@
 \definecolor{tudelft-groen}{RGB}{108,194,74}
 \definecolor{tudelft-bosgroen}{RGB}{0,155,119}
 \definecolor{tudelft-donkergrijs}{RGB}{92,92,92}
-%
-% Define environment for equation parameters.
+
+%% Define environment for equation parameters.
 \newenvironment{conditions}
 {\par\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
         {\end{tabular}\par\vspace{0.5\belowdisplayskip}}
-%
-% Define default code environment.
+
+%% Define default code environment.
 \lstdefinestyle{code}{
     backgroundcolor=\color{white},
     basicstyle=\small\ttfamily,
@@ -125,9 +126,9 @@
     tabsize=2
 }
 \lstset{style=code}
-%
-% Define Definition environment. Inspired by SeniorMars, latex_template.
-% https://github.com/SeniorMars/dotfiles/tree/main/latex_template.
+
+%% Define Definition environment. Inspired by SeniorMars, latex_template.
+%% https://github.com/SeniorMars/dotfiles/tree/main/latex_template.
 \makeatletter
 \newtcbtheorem[number within=section]{Definition}{Definition}{enhanced,
     before skip=2mm,
@@ -138,7 +139,6 @@
     boxrule=0.5mm,
     attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight},
     fonttitle = \bfseries\sffamily,
-    % varwidth boxed title*=-3cm,
     boxed title style={frame code={
                     \path[fill=tudelft-bordeaux]
                     ([yshift=-1mm,xshift=-1mm]frame.north west)
@@ -157,8 +157,8 @@
     #1
 }{dfn}
 \makeatother
-%
-% Define Question environment.
+
+%% Define Question environment.
 \makeatletter
 \newtcbtheorem[number within=section]{Questions}{Question}{enhanced,
     breakable,
@@ -167,14 +167,14 @@
     attach boxed title to top left={yshift*=-\tcboxedtitleheight},
     fonttitle = \bfseries\sffamily,
     boxed title size=title,
-    boxed title style={%
+    boxed title style={
             sharp corners,
             rounded corners=northwest,
             colback=tcbcolframe,
             boxrule=0pt,
             left=4mm,
         },
-    underlay boxed title={%
+    underlay boxed title={
             \path[fill=tcbcolframe] (title.south west)--(title.south east)
             to[out=0, in=180] ([xshift=5mm]title.east)--
             (title.center-|frame.east)
@@ -184,8 +184,8 @@
     #1
 }{qs}
 \makeatother
-%
-% Define Claim environment.
+
+%% Define Claim environment.
 \makeatletter
 \newtcbtheorem[number within=section]{Claim}{Claim}{enhanced,
     breakable,
@@ -203,8 +203,8 @@
     segmentation style={solid, tudelft-groen},
     #1
 }{clm}
-%
-% Define Example environment.
+
+%% Define Example environment.
 \makeatletter
 \newtcbtheorem[number within=section]{Example}{Example}{enhanced,
     breakable,
@@ -222,8 +222,8 @@
     #1
 }{ex}
 \makeatother
-%
-% Define Theorem environment.
+
+%% Define Theorem environment.
 \makeatletter
 \newtcbtheorem[number within=section]{Theorem}{Theorem}{enhanced,
     breakable,
@@ -241,8 +241,8 @@
     segmentation style={solid, tudelft-paars},
     #1
 }{thm}
-%
-% Define Corollary environment.
+
+%% Define Corollary environment.
 \makeatletter
 \newtcbtheorem[number within=section]{Corollary}{Corollary}{enhanced,
     breakable,
@@ -260,8 +260,8 @@
     segmentation style={solid, tudelft-roze},
     #1
 }{cor}
-%
-% Define Lemma environment.
+
+%% Define Lemma environment.
 \makeatletter
 \newtcbtheorem[number within=section]{Lemma}{Lemma}{enhanced,
     breakable,
@@ -279,8 +279,8 @@
     segmentation style={solid, tudelft-rood},
     #1
 }{lem}
-%
-% Define Proposition environment.
+
+%% Define Proposition environment.
 \makeatletter
 \newtcbtheorem[number within=section]{Proposition}{Proposition}{enhanced,
     breakable,
@@ -298,8 +298,8 @@
     segmentation style={solid, tudelft-donkerblauw},
     #1
 }{prp}
-%
-% Commands for tcolorbox environments.
+
+%% Commands for tcolorbox environments.
 \newcommand{\dfn}[3]{\begin{Definition}{#1}{#2}#3\end{Definition}}
 \newcommand{\qs}[3]{\begin{Questions}{#1}{#2}#3\end{Questions}}
 \newcommand{\sol}{\textbf{\textit{Solution: }}}
@@ -310,23 +310,23 @@
 \newcommand{\cor}[3]{\begin{Corollary}{#1}{#2}#3\end{Corollary}}
 \newcommand{\lem}[3]{\begin{Lemma}{#1}{#2}#3\end{Lemma}}
 \newcommand{\prp}[3]{\begin{Proposition}{#1}{#2}#3\end{Proposition}}
-%
-% Hyperref setup (swap comments for coloured links).
+
+%% Hyperref setup (swap comments for coloured links).
 % \usepackage[hidelinks]{hyperref}
 \usepackage[colorlinks,allcolors=tudelft-cyaan]{hyperref}
-%
-% Commands for differentials.
+
+%% Commands for differentials.
 \newcommand\df{\mathop{}\!\mathrm{d}}
-%
-% Command for cleveref package. Should be below `hyperref`.
+
+%% Command for cleveref package. Should be below hyperref.
 \usepackage{cleveref}
 \crefname{table}{Table}{Tables}
 \crefname{section}{Section}{Sections}
 \crefname{subsection}{Subsection}{Subsections}
 \crefname{figure}{Figure}{Figures}
 \crefname{equation}{equation}{equations}
-%
-% For blank pages before chapters without header.
+
+%% For blank pages before chapters without header.
 \makeatletter
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
             \hbox{}
@@ -335,8 +335,8 @@
             \newpage
             \if@twocolumn\hbox{}\newpage\fi\fi\fi}
 \makeatother
-%
-% Fancy headers.
+
+%% Fancy headers.
 \fancypagestyle{fancy}{
     \fancyhf{}
     \renewcommand{\headrulewidth}{1pt}
@@ -352,17 +352,17 @@
     \renewcommand{\headrulewidth}{0pt}
     \renewcommand{\footrulewidth}{0pt}
 }
-%
-% Adjust header height to avoid warnings from fancyhdr.
+
+%% Adjust header height to avoid warnings from fancyhdr.
 \setlength{\headheight}{20.39996pt}
 \addtolength{\topmargin}{-8.39996pt}
-%
-% % Numbering within sections (uncomment if needed).
+
+% %% Numbering within sections (uncomment if needed).
 % \numberwithin{equation}{section}
 % \numberwithin{table}{section}
 % \numberwithin{figure}{section}
-%
-% Print current font command for debugging font issues.
+
+%% Print current font command for debugging font issues.
 \makeatletter
 \newcommand{\printcurrentfont}{
     \begingroup\escapechar=\m@ne
@@ -380,4 +380,3 @@
     \endgroup
 }
 \makeatother
-%

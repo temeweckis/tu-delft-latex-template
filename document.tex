@@ -2,27 +2,27 @@
 %% GitHub repository: https://github.com/temeweckis/tu-delft-latex-template.
 %% Overleaf project: https://www.overleaf.com/read/whdqpbhcfhmq#d8bdea.
 \documentclass[a4paper,10pt,twoside]{article}
-%
-% Preamble.
+
+%% Preamble.
 \input{tex/preamble.tex}
-%
-% Title settings.
+
+%% Title settings.
 \newcommand{\mytitle}{Title}
 \newcommand{\mycoursetitle}{Course title}
 \newcommand{\mycoursecode}{Course code}
 \newcommand{\myauthor}{Author Name 1 (...)\\ Author Name 2 (...)}
 \newcommand{\mygroup}{}
 \newcommand{\mydate}{\today}
-%
-% Document author and title metadata.
+
+%% Document author and title metadata.
 {\pdfstringdefDisableCommands{\def\\{, }}\hypersetup{pdfauthor={\myauthor},pdftitle={\mytitle}}}
-%
-% Setup for \maketitle.
+
+%% Setup for \maketitle.
 \title{\mytitle}
 \author{\myauthor}
 \date{\mydate}
-%
-% Begin document.
+
+%% Begin document.
 \begin{document}
 
 %% Titlepage.
@@ -44,10 +44,11 @@
 % \addcontentsline{toc}{section}{List of Tables}
 % \newpage
 
+% %%%% Uncomment to use \maketitle instead of the custom title page (also comment out titlepage and toc above).
+% {\sffamily\maketitle}
+
 %% Main body.
-\pagestyle{fancy}  % Use fancy page style for the main body.
-% {\sffamily\maketitle}  % Uncomment to replace title page with \maketitle (also comment out titlepage and toc above).
-\pagenumbering{arabic}
+\pagenumbering{arabic}\pagestyle{fancy}
 \input{tex/body.tex}
 \newpage
 
