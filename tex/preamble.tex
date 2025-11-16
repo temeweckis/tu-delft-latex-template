@@ -13,6 +13,7 @@
     \setmathfont{XCharter-Math.otf}[CharacterVariant={11,12}]
     \setmathfont{XCharter-Math}[range={cal,bfcal},StylisticSet=1]
     \renewcommand{\vec}{\symbfit}                       % Display all vectors created using `\vec` with bold italics
+    \newcommand{\mat}{\symbf}                           % Display all matrices created using `\mat` with bold upright
 \else                                                   % If using pdflatex (or others), use traditional packages
     \usepackage{mathtools}                              % Math tools (amsmath extension)
     \usepackage{amssymb}                                % Additional math symbols
@@ -21,6 +22,7 @@
     \usepackage[type1,defaultsans,scaled=0.97]{lato}
     \usepackage[xcharter,scaled=1.05]{newtxmath}        % Resize math fonts to (roughly) match LuaLaTeX setup
     \renewcommand{\vec}{\boldsymbol}                    % Display all vectors created using `\vec` with bold italics
+    \newcommand{\mat}{\mathbf}                          % Display all matrices created using `\mat` with bold upright
     \let\emptyset\varnothing                            % Use different empty set symbol to match LuaLaTeX setup
 \fi
 
