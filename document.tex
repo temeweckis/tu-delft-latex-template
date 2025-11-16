@@ -25,12 +25,17 @@
 %% Begin document.
 \begin{document}
 
-%% Titlepage.
-\pagenumbering{roman}\thispagestyle{empty}
+%% Custom title page.
+\pagenumbering{roman}
+\thispagestyle{empty}
 \input{tex/titlepage.tex}
 
+% %%%% Uncomment to use \maketitle instead of the custom title page (remember to comment out titlepage and toc).
+% %% Standard title page.
+% {\sffamily\maketitle}
+
 %% Table of contents.
-\setcounter{page}{2}\pagestyle{plain}
+\pagestyle{plain}
 {\setlength{\baselineskip}{0.6cm}\hypersetup{hidelinks}\tableofcontents}
 \newpage
 
@@ -44,11 +49,9 @@
 % \addcontentsline{toc}{section}{List of Tables}
 % \newpage
 
-% %%%% Uncomment to use \maketitle instead of the custom title page (also comment out titlepage and toc above).
-% {\sffamily\maketitle}
-
 %% Main body.
-\pagenumbering{arabic}\pagestyle{fancy}
+\pagenumbering{arabic}
+\pagestyle{fancy}
 \input{tex/body.tex}
 \newpage
 
