@@ -26,6 +26,9 @@
     \let\emptyset\varnothing                            % Use different empty set symbol to match LuaLaTeX setup
 \fi
 
+% %% Option to use sans serif fonts throughout the document (uncomment to enable).
+% \renewcommand{\familydefault}{\sfdefault}
+
 %% Additional packages.
 \usepackage{fancyhdr}                                   % Fancy headers and footers
 \usepackage{csquotes}                                   % Advanced inline and display quotations (recommended with babel)
@@ -85,10 +88,13 @@
 %% Commands for differentials.
 \newcommand{\df}{\mathop{}\!\mathrm{d}}
 
+%% Command for transpose.
+\newcommand{\T}{\mathrm{T}}
+
 %% Shrink bullet points.
 \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-% %% Numbering within sections (uncomment if needed).
+% %% Numbering within sections (uncomment to enable).
 % \numberwithin{equation}{section}
 % \numberwithin{table}{section}
 % \numberwithin{figure}{section}
@@ -151,7 +157,7 @@
 %% Always (re)define tudelft-cyaan (used in hyperlinks by default).
 \definecolor{tudelft-cyaan}{RGB}{0,166,214}
 
-%% Hyperref setup (swap comments for coloured links).
+%% Hyperref setup (option between coloured links and hidelinks).
 % \usepackage[hidelinks]{hyperref}
 \usepackage[colorlinks,allcolors=tudelft-cyaan]{hyperref}
 
