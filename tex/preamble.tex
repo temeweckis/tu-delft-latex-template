@@ -77,7 +77,7 @@
 \captionsetup{font=sf,labelfont=bf,justification=centering,width=0.9\textwidth}
 
 %% Path to graphics folder.
-\graphicspath{{./figures}}
+\graphicspath{{./figures/}}
 
 %% Commands for gradient, divergence, and curl operators.
 \DeclareMathOperator{\Grad}{grad}
@@ -98,7 +98,7 @@
 \newcommand{\T}{\mathrm{T}}
 
 %% Shrink bullet points.
-\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemi}{\raisebox{0.2ex}{\tiny$\bullet$}}
 
 % %% Numbering within sections (uncomment to enable).
 % \numberwithin{equation}{section}
