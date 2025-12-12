@@ -35,9 +35,9 @@ This template can be viewed in Overleaf using [this link](https://www.overleaf.c
 ## Typesetting and LaTeX settings
 
 * `a4paper` paper size and `10pt` font size with the `article` document class.
-* Body fonts: `XCharter` for serif, `Lato` for sans serif, and `sourcecodepro` for monospace.
+* Body fonts: `XCharter` for serif, `Lato` for sans serif, and `Source Code Pro` for monospace.
 * Maths fonts: `XCharter-Math`.
-* Bibliography management with `biblatex` and the `biber` backend.
+* Bibliography management with `biblatex` and the `biber` backend, using the `apa` style.
 * This template has been designed for use with `texlive/lualatex`, but it's likely compatible with other compilers. I've confirmed it to compile properly in the following environments:
   * Overleaf with `pdflatex`, Tex Live version 2025.
   * Overleaf with `lualatex`, Tex Live version 2025.

@@ -18,8 +18,8 @@
 \else
     \usepackage{mathtools}                              % Enhanced math (amsmath extension)
     \usepackage{XCharter}
-    \usepackage[type1,defaultsans,scaled=0.945]{lato}   % Scale to (roughly) match XCharter setup
-    \usepackage[type1,ttdefault]{sourcecodepro}
+    \usepackage[type1,defaultsans,scaled=0.949646]{lato}% Scale to match LuaLaTeX setup
+    \usepackage[type1,ttdefault,scaled=0.989716]{sourcecodepro}
     \usepackage[xcharter,scaled=1.07]{newtxmath}        % Scale to (roughly) match LuaLaTeX setup
     \renewcommand{\vec}{\boldsymbol}                    % Bold italic vectors
     \newcommand{\mat}{\mathbf}                          % Bold upright matrices
@@ -58,15 +58,7 @@
 \usepackage{chemformula}                                % Chemical formulae; after babel and fonts
 
 %% Bibliography settings (build with lualatex -> biber -> lualatex x 2).
-\usepackage[style=authoryear,
-    maxbibnames=5,
-    maxcitenames=2,
-    giveninits=true,
-    uniquelist=false,
-    uniquename=init,
-    seconds=true,
-    urldate=iso,
-]{biblatex}
+\usepackage[style=apa]{biblatex}
 \addbibresource{references.bib}
 \newcommand\citep{\parencite}
 
@@ -81,14 +73,7 @@
 \DeclareMathOperator{\Div}{div}
 \DeclareMathOperator{\Curl}{curl}
 
-%% Commands for Big-Oh notation.
-\newcommand{\oh}{\mathcal{O}}
-
-%% Commands for the set of real numbers and Lagrangian/Laplace.
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\La}{\mathscr{L}}
-
-%% Commands for differentials.
+%% Command for differentials.
 \newcommand{\df}{\mathop{}\!\mathrm{d}}
 
 %% Command for transpose.
