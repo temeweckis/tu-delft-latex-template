@@ -1,5 +1,5 @@
 %% Include packages.
-\usepackage[top=0.95in,bottom=1in,left=0.85in,right=0.85in]{geometry}
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
 \usepackage[main=english]{babel}                        % Advanced language support; must by loaded early
 \usepackage{amsthm}                                     % Theorem and proof environments
 
@@ -26,6 +26,9 @@
     \renewcommand{\emptyset}{\varnothing}               % Empty set symbol consistent with LuaLaTeX
 \fi
 
+%% Increase line spacing according to XCharter guidelines.
+\linespread{1.04}
+
 % %% Optionally make entire document sans-serif (uncomment to enable).
 % \renewcommand{\familydefault}{\sfdefault}
 
@@ -34,15 +37,15 @@
 \usepackage[titles]{tocloft}                            % TOC customization; must be loaded before parskip/titlesec
 \usepackage{parskip}                                    % Adjust paragraph spacing; after tocloft to avoid warnings
 
-%% Figures, floats, captions, colors, boxes, and code listings.
+%% Figures, floats, captions, colours, boxes, and code listings.
 \usepackage{graphicx}                                   % Displaying images and figures
 \usepackage{caption}                                    % Caption customization
 \usepackage{subcaption}                                 % Sub-captions within figures/tables; depends on caption
 \usepackage{float}                                      % H float specifier
 \usepackage{listings}                                   % Code listing environment
 \usepackage{lstautogobble}                              % Auto-indent removal for listings
-\usepackage{xcolor}                                     % Colors for text and boxes
-\usepackage[most]{tcolorbox}                            % Colored and framed boxes; must come after listings
+\usepackage{xcolor}                                     % Colours for text and boxes
+\usepackage[most]{tcolorbox}                            % Coloured and framed boxes; must come after listings
 
 %% Lists, titles, and document structure.
 \usepackage{enumitem}                                   % Customizable enumerate/itemize environments
