@@ -1,30 +1,18 @@
 %% Include packages.
-\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage[top=3.0cm,bottom=3.0cm,left=3.0cm,right=3.0cm]{geometry}
 \usepackage[main=english]{babel}                        % Advanced language support; must by loaded early
 \usepackage{amsthm}                                     % Theorem and proof environments
 
-%% Use XCharter for text, Lato for sans-serif, Source Code Pro for monospace, and XCharter-Math for math.
-\usepackage{ifluatex}
-\ifluatex                                               % If using lualatex, use fontspec to set the fonts
-    \usepackage[no-math]{fontspec}
-    \setmainfont{XCharter}
-    \setsansfont{Lato}[Scale=MatchLowercase]
-    \setmonofont{Source Code Pro}[Scale=MatchLowercase]
-    \usepackage{unicode-math}
-    \setmathfont{XCharter-Math.otf}[CharacterVariant={11,12}]
-    \setmathfont{XCharter-Math}[range={cal,bfcal},StylisticSet=1]
-    \renewcommand{\vec}{\symbfit}                       % Bold italic vectors
-    \newcommand{\mat}{\symbf}                           % Bold upright matrices
-\else
-    \usepackage{mathtools}                              % Enhanced math (amsmath extension)
-    \usepackage{XCharter}
-    \usepackage[type1,defaultsans,scaled=0.949646]{lato}% Scale to match LuaLaTeX setup
-    \usepackage[type1,ttdefault,scaled=0.989716]{sourcecodepro}
-    \usepackage[xcharter,scaled=1.07]{newtxmath}        % Scale to (roughly) match LuaLaTeX setup
-    \renewcommand{\vec}{\boldsymbol}                    % Bold italic vectors
-    \newcommand{\mat}{\mathbf}                          % Bold upright matrices
-    \renewcommand{\emptyset}{\varnothing}               % Empty set symbol consistent with LuaLaTeX
-\fi
+%% Use XCharter for text, Lato for sans-serif, Inconsolatazi4 for monospace, and XCharter-Math for math.
+\usepackage[no-math]{fontspec}
+\setmainfont{XCharter}
+\setsansfont{Lato}[Scale=MatchLowercase]
+\setmonofont{Inconsolatazi4}[Scale=MatchLowercase,AutoFakeSlant]
+\usepackage{unicode-math}
+\setmathfont{XCharter-Math.otf}[CharacterVariant={11,12}]
+\setmathfont{XCharter-Math}[range={cal,bfcal},StylisticSet=1]
+\renewcommand{\vec}{\symbfit}                           % Bold italic vectors
+\newcommand{\mat}{\symbf}                               % Bold upright matrices
 
 %% Increase line spacing according to XCharter guidelines.
 \linespread{1.04}
@@ -39,9 +27,11 @@
 
 %% Figures, floats, captions, colours, boxes, and code listings.
 \usepackage{graphicx}                                   % Displaying images and figures
+\usepackage{wrapfig}                                    % Wrapped figures
 \usepackage{caption}                                    % Caption customization
 \usepackage{subcaption}                                 % Sub-captions within figures/tables; depends on caption
 \usepackage{float}                                      % H float specifier
+\usepackage{booktabs}                                   % Professional tables
 \usepackage{listings}                                   % Code listing environment
 \usepackage{lstautogobble}                              % Auto-indent removal for listings
 \usepackage{xcolor}                                     % Colours for text and boxes
@@ -49,16 +39,27 @@
 
 %% Lists, titles, and document structure.
 \usepackage{enumitem}                                   % Customizable enumerate/itemize environments
-\usepackage[sf,bf]{titlesec}                            % Section formatting; must follow tocloft
+\usepackage[bf]{titlesec}                               % Section formatting; must follow tocloft
 \usepackage[titletoc]{appendix}                         % Appendices; should follow titlesec
 \usepackage{multicol}                                   % Multi-column environments
 \usepackage{fancyhdr}                                   % Fancy headers/footers
 
 %% Language, dates, and specialized content.
 \usepackage{csquotes}                                   % Advanced quotation management; after babel
-\usepackage[showdow,en-US]{datetime2}                   % Date/time formatting
+\usepackage[en-US]{datetime2}                           % Date/time formatting
 \usepackage[exponent-product=\cdot]{siunitx}            % SI units; after math packages
 \usepackage{chemformula}                                % Chemical formulae; after babel and fonts
+
+%% Tikz for figures and diagrams.
+\usepackage{tikz}
+\usetikzlibrary{positioning, fit, arrows.meta, calc, backgrounds, shapes.geometric}
+
+%% PDF inclusion.
+\usepackage{pdfpages}
+
+%% Landscape pages.
+% \usepackage{pdflscape}  % rotates the PDF page in viewer
+\usepackage{lscape}  % does not rotate the PDF page in viewer
 
 %% Bibliography settings (build with lualatex -> biber -> lualatex x 2).
 \usepackage[style=apa]{biblatex}
@@ -66,7 +67,8 @@
 \newcommand\citep{\parencite}
 
 %% Caption formatting.
-\captionsetup{font=sf,labelfont=bf,justification=centering,width=0.9\textwidth}
+% \captionsetup[subfigure]{aboveskip=-1pt,belowskip=2pt}
+\captionsetup{labelfont=bf,justification=centering,width=0.9\textwidth}
 
 %% Path to graphics folder.
 \graphicspath{{./figures/}}
@@ -93,9 +95,9 @@
 %% Fancy page style.
 \fancypagestyle{fancy}{
     \fancyhf{}
-    \fancyhead[EC]{\sffamily\nouppercase\rightmark}
-    \fancyhead[OC]{\sffamily\nouppercase\leftmark}
-    \cfoot{\sffamily\thepage}
+    \fancyhead[EL,OR]{\thepage}
+    \fancyhead[ER]{\nouppercase\rightmark}
+    \fancyhead[OL]{\nouppercase\leftmark}
     \renewcommand{\headrulewidth}{1pt}
     \renewcommand{\footrulewidth}{0pt}
     \renewcommand{\headrule}{\hbox to\headwidth{\leaders\hrule height \headrulewidth\hfill}}
@@ -104,14 +106,20 @@
 %% Plain page style.
 \fancypagestyle{plain}{
     \fancyhf{}
-    \cfoot{\sffamily\thepage}
+    \fancyfoot[C]{\small\thepage}
     \renewcommand{\headrulewidth}{0pt}
     \renewcommand{\footrulewidth}{0pt}
 }
 
 %% Adjust header height to avoid warnings from fancyhdr.
 \setlength{\headheight}{20.39996pt}
-\addtolength{\topmargin}{-8.39996pt}
+% \addtolength{\topmargin}{-8.39996pt}
+
+%% Adjust footer height to make more space for page numbers.
+\addtolength{\footskip}{14pt}
+
+%% Paragraph spacing.
+\titlespacing{\paragraph}{0pt}{1em}{1em}
 
 %% Print current font command for debugging font issues.
 \makeatletter
@@ -141,6 +149,7 @@
 %% Hyperref setup (option between coloured links and hidelinks).
 % \usepackage[hidelinks]{hyperref}
 \usepackage[colorlinks,allcolors=tudelft-cyaan]{hyperref}
+\urlstyle{tt}
 
 %% Command for cleveref package. Should be below hyperref.
 \usepackage{cleveref}

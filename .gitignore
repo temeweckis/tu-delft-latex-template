@@ -1,4 +1,4 @@
-#### Relevant excerpts TeX.gitignore: https://github.com/github/gitignore/blob/main/TeX.gitignore
+# Relevant excerpts from TeX.gitignore: https://github.com/github/gitignore/blob/main/TeX.gitignore
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -35,23 +35,23 @@
 *.rubbercache
 rubber.cache
 
-## Build tool directories for auxiliary files
+## Build tool directories for auxiliary files:
 latex.out/
 
 ## Auxiliary and intermediate files from other packages:
-# amsthm
+### amsthm
 *.thm
 
-# hyperref
+### hyperref
 *.brf
 
-# listings
+### listings
 *.lol
 
-# tcolorbox
+### tcolorbox
 *.listing
 
-# xcolor
+### xcolor
 *.xcp
 
 ## Default output file:

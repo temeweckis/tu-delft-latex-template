@@ -1,7 +1,6 @@
 # Teemu's TU Delft LaTeX Template
 
 This repository contains my standard LaTeX template, which I mainly use for writing assignments and taking notes at the Delft University of Technology (TU Delft).
-<!-- It contains several packages and shortcuts which I find particularly useful. -->
 
 This template can be viewed in Overleaf using [this link](https://www.overleaf.com/read/whdqpbhcfhmq#d8bdea).
 
@@ -35,10 +34,7 @@ This template can be viewed in Overleaf using [this link](https://www.overleaf.c
 ## Typesetting and LaTeX settings
 
 * `a4paper` paper size and `10pt` font size with the `article` document class.
-* Body fonts: `XCharter` for serif, `Lato` for sans serif, and `Source Code Pro` for monospace.
+* Body fonts: `XCharter` for serif, `Lato` for sans serif, and `Inconsolatazi4` for monospace.
 * Maths fonts: `XCharter-Math`.
 * Bibliography management with `biblatex` and the `biber` backend, using the `apa` style.
-* This template has been designed for use with `texlive/lualatex`, but it's likely compatible with other compilers. I've confirmed it to compile properly in the following environments:
-  * Overleaf with `pdflatex`, Tex Live version 2025.
-  * Overleaf with `lualatex`, Tex Live version 2025.
-  <!-- * **Note:** I have had problems with `XeLaTeX` in the past, so I recommend using `pdflatex` or `lualatex` instead. -->
+* This template has been designed for use with `LuaLaTeX`, and I've dropped support for other compilers.
